@@ -25,7 +25,7 @@ SECRET_KEY = 'dq@eow3i=she6-pcni(_s7*1&1xc5wf=4q2p_c0wi50&411fa4'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['13.232.214.158']
+ALLOWED_HOSTS = ['13.232.214.158', 'localhost']
 
 
 # Application definition
