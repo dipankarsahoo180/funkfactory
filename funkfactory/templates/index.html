@@ -1,0 +1,635 @@
+
+<!--
+Author: W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+<!DOCTYPE html>
+{% load static %}
+{% static 'images' as baseUrl %}
+<html lang="en">
+
+<head> 
+	<title> Home :: Funk Factory Dance</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="keywords" content="Dance whirl Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, 
+		SmartPhone Compatible web template, free WebDesigns for Nokia, Samsung, LG, Sony Ericsson, Motorola web design" />
+	<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	<!-- Custom Theme files -->
+	<link href="{% static 'css/bootstrap.css' %}" type="text/css" rel="stylesheet" media="all">
+	<link href="{% static 'css/popup-box.css' %}" rel="stylesheet" type="text/css" media="all" />
+	<link href="{% static 'css/style.css' %}" type="text/css" rel="stylesheet" media="all"> 
+	<link rel="stylesheet" href="{% static 'css/main-gallery.css' %}" type="text/css" media="screen" />  <!-- flexslider-CSS --> 
+	<link href="{% static 'css/font-awesome.css' %}" rel="stylesheet">		<!-- font-awesome icons -->
+	<!-- //Custom Theme files --> 
+	<!-- web-fonts -->  
+	<link href="//fonts.googleapis.com/css?family=Arapey:400,400i" rel="stylesheet">
+	<link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:300i,400,400i,600,600i,700" rel="stylesheet">
+	<!-- //web-fonts -->
+</head>
+<body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
+	<!-- banner -->
+	<div id="home" class="w3ls-banner"> 
+
+		<!-- banner-text -->
+		<div class="slider">
+			<div class="callbacks_container">
+				<ul class="rslides callbacks callbacks1" id="slider4">
+				{% for pictures in pictures %}
+					<li>
+						<div class="w3layouts-banner-top" style = "background: url({{pictures.images.url}}) no-repeat 0px 0px;background-size:100% 100%;">
+							<div class="container">
+								<div class="agileits-banner-info">
+									<h3>Shall We <span>Dance</span> ?</h3>
+										<p>CELEBRATE YOUR EVENT WITH US</p>
+									<div class="agileits_w3layouts_more menu__item">
+											<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal">Learn More</a>
+									</div>
+								</div>	
+							</div>
+						</div>
+					</li>
+					{% endfor %}
+				</ul>
+			</div>
+			<div class="clearfix"> </div>
+			
+			<!--banner Slider starts Here-->
+		</div>
+		    <div class="thim-click-to-bottom">
+				<a href="#about" class="scroll">
+					<i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+				</a>
+			</div>
+ 			<!-- header -->
+		<div class="header-w3layouts"> 
+			<!-- Navigation -->
+			<nav class="navbar navbar-default navbar-fixed-top">
+				<div class="container">
+					<div class="navbar-header page-scroll">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+							<span class="sr-only">Button</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+						<h1><a class="navbar-brand" href="/">Funk Factory Dance</a></h1>
+					</div> 
+					<!-- Collect the nav links, forms, and other content for toggling -->
+					<div class="collapse navbar-collapse navbar-ex1-collapse">
+						<ul class="nav navbar-nav navbar-right">
+							<!-- Hidden li included to remove active class from about link when scrolled up past about section -->
+							<li class="hidden"><a class="page-scroll" href="#page-top"></a>	</li>
+							<li><a class="page-scroll scroll" href="#home">Home</a></li>
+							<li><a class="page-scroll scroll" href="#about">About</a></li>
+							<li><a class="page-scroll scroll" href="#classes">Classes</a></li>
+							<li><a class="page-scroll scroll" href="#plans">Plans</a></li>
+							<li><a class="page-scroll scroll" href="#instructors">Instructors</a></li>
+							<li><a class="page-scroll scroll" href="#gallery">Gallery</a></li>
+							<li><a class="page-scroll scroll" href="#contact">Contact</a></li>
+							<li><a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog">SignUP</a></li>
+						</ul>
+					</div>
+					<!-- /.navbar-collapse -->
+				</div>
+				<!-- /.container -->
+			</nav>  
+		</div>	
+		<!-- //header -->
+	</div>	
+	<!-- //banner --> 
+
+{% if messages %}
+	{% for message in messages  %}
+			<div class="alert alert-success alert-dismissible" role="alert">
+				<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<strong>{{message.tag}}</strong>
+				<h2><strong>{{message}}</strong><h2>
+			</div>
+	{% endfor %}
+{% endif %}
+<!-- about -->
+<table class="about" id="about">
+	<tr>
+		<td class="ab-w3-agile-info-text">
+			<h2 class="title-w3">{{about.heading}}</h2>
+			<p class="sub-text one">{{about.sub_heading}}</p>
+			<p>{{about.body}}</p>
+				<div class="agileits_w3layouts_more menu__item one">
+					<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal">Learn More</a>
+				</div>
+		</td>
+		<td > <img src="{{about.image.url}}"/ width="100%" height="100%"> </td>
+	</tr>
+	<tr class="ab-w3-agile-inner">
+			<td class="col-md-6 ab-w3-agile-part">
+					<h4>{{classSummary.heading}}</h4>
+				<p>{{classSummary.body}}</p>
+			</td>
+				<td class="col-md-6 ab-w3-agile-part">
+				<h4>{{classSummary.heading2}}</h4>
+				<p>{{classSummary.body2}}</p>
+			</td>
+	</tr>
+</table>
+	<!-- //about -->
+											<!-- Modal1 -->
+													<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
+														<div class="modal-dialog">
+														<!-- Modal content-->
+															<div class="modal-content">
+																<div class="modal-header">
+																	<button type="button" class="close" data-dismiss="modal">&times;</button>
+																	<img src="{{about.more_popup_image.url}}" alt=" No image currently" class="img-responsive" width="100%" height="100%">
+																	<h5>Notifications</h5>
+																	{% for notifications in notifications %}
+																	<p>{{notifications.date}}	{{notifications.notice}}</p>
+																	{% endfor %}
+																</div>
+															</div>
+														</div>
+													</div>
+													<!-- //Modal1 -->
+
+	<!-- /classes-->
+	<div class="services" id="classes">
+		<div class="container">
+		 <h3 class="title-w3">Dancing Classes</h3>
+		 <p class="sub-text">Choose Your Style</p>
+		     <div class="wthree-agile-classes-section">
+				 {% for styles in dance_styles %}
+	               	<div class="col-md-3 class-grid">
+						<div class="class-grid-img hvr-sweep-to-top">
+					       <img src="{{styles.picture.url}}" height="400px" alt="pictures to be updated"/>
+						    <div class="caption">
+							    <h5>{{styles.class_name}}</h5>
+							</div>
+						</div>
+						<h4>{{styles.dance_style}} </h4>
+				    </div>
+				 {% endfor %}
+				<div class="clearfix"> </div>
+	         </div>
+		 </div>	
+   </div>
+   <!-- //classes-->
+   <div class="main" id="plans">
+		<div id="particles-js"></div>
+
+		  
+		<div class="priceing-table-main">
+		       <h3 class="title-w3 three">Our Pricing Pakages</h3>
+		       <p class="sub-text">Choose Your Style</p>
+			   <div class="priceing-table-grids">
+				 <div class="col-md-3 price-grid">
+					<div class="price-block agile">
+						<div class="price-gd-top pric-clr1">
+							<h4>1/2HR LESSON</h4>
+							<h3><span>$</span>79</h3>
+							<h5>each</h5>
+						</div>
+						<div class="price-gd-bottom">
+							   <div class="price-list">
+								
+									<ul>
+											<li><i class="fa fa-star" aria-hidden="true"></i></li>
+											<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+											<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+											<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+											<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									
+								     </ul>
+									 <h6 class="bed"><i class="fa fa-street-view" aria-hidden="true"></i></h6>
+							</div>
+							<div class="price-selet pric-sclr1">		    			   
+                    <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog">Sign Up</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 price-grid ">
+					<div class="price-block agile">
+						<div class="price-gd-top pric-clr2">
+							<h4>3/4HR LESSON</h4>
+							<h3><span>$</span>119</h3>
+							<h5>each</h5>
+						</div>
+						<div class="price-gd-bottom">
+							<div class="price-list">
+								
+									<ul>
+									<li><i class="fa fa-star" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									
+								</ul>
+								<h6 class="bed two"><i class="fa fa-street-view" aria-hidden="true"></i></h6>
+								
+							</div>
+							<div class="price-selet pric-sclr2">
+								<a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog">Sign Up</a>
+
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 price-grid lost">
+					<div class="price-block agile">
+						<div class="price-gd-top pric-clr3">
+							<h4>1HR LESSON</h4>
+							<h3><span>$</span>159</h3>
+							<h5>each</h5>
+						</div>
+						<div class="price-gd-bottom">
+							<div class="price-list">
+								<ul>
+									<li><i class="fa fa-star" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									
+								</ul>
+								<h6 class="bed three"><i class="fa fa-street-view" aria-hidden="true"></i></h6>
+							</div>
+							<div class="price-selet pric-sclr3">
+								<a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog">Sign Up</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-md-3 price-grid wthree lost">
+					<div class="price-block agile">
+						<div class="price-gd-top pric-clr4">
+							<h4>1/2HR LESSON</h4>
+							<h3><span>$</span> 199</h3>
+							<h5>each</h5>
+						</div>
+						<div class="price-gd-bottom">
+							<div class="price-list">
+								<ul>
+									<li><i class="fa fa-star" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star" aria-hidden="true"></i></li>
+									<li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+									
+								</ul>
+								<h6 class="bed four"><i class="fa fa-street-view" aria-hidden="true"></i></h6>
+							</div>
+							<div class="price-selet pric-sclr4">
+								<a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#small-dialog">Sign Up</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="clearfix"> </div>
+			</div>
+		
+		</div>	
+	</div>	
+	<!--//prices -->
+				<!-- Modal2-->
+		<div class="pop-up" id="signupp">
+			<div id="small-dialog" class="mfp-hide book-form">
+				<h4>Sign Up Here </h4>
+				<form action="/" method="post" id="sign_up_form">
+					{% csrf_token %}
+						<input type="text" name="first_name" placeholder="Your First Name" required/>
+						<input type="text" name="last_name" placeholder="Your Last Name" required/>
+						<input type="text" name="username" placeholder="Choose an username" required/>
+						<input type="text" name="email" class="email" placeholder="Email" required/>
+						<input type="password" name="Password1" class="password" placeholder="Password" id="password1" required/>
+						<input type="password" name="Password2" class="password" placeholder=" Confirm Password" id="password2"  required/>
+						<div><span id='message'></span></div>
+						<div class="check-box">
+							<input name="chekbox" type="checkbox" id="brand" >
+							<label for="brand"><span></span>Remember Me.</label>
+						</div>
+
+						{% if messages %}
+								{% for message in messages  %}
+										<div class="alert alert-success alert-dismissible" role="alert">
+											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+											<strong>{{message.tag}}</strong>
+											<h2><strong>{{message}}</strong><h2>
+										</div>
+								{% endfor %}
+						{% endif %}
+						<input type="submit" name="sign_up" id="regbtn" value="Sign Up" />
+				</form>
+			</div>
+		</div>
+		<script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+		<script>
+					$('#password1, #password2').on('keyup', function () {
+							if ($('#password1').val() == $('#password2').val())
+							 {
+								$('#message').html('Matching').css('color', 'green');
+								$('#regbtn').attr({disabled:false});
+							 }
+							else
+							{
+								$('#message').html('Passwords Not Matching').css('color', 'red');
+								$('#regbtn').attr({disabled:true});
+							}
+						});
+			</script>
+						<!-- //Modal2 -->
+	<!-- instructors -->
+		<div class="instructors" id="instructors">
+		   <div class="container">
+		     <h3 class="title-w3">Our Instructors</h3>
+		       <p class="sub-text">Choose Your Style</p>
+		      <div class="team-grids">
+					<!-- Bottom to top-->
+				  {% for masters in instructors %}
+				  <div class="col-sm-4 team-grid">
+							<!-- normal -->
+							<div class="ih-item circle effect10 bottom_to_top">
+								<div class="img"><img src="{{masters.image.url}}" alt="img" /></div>
+								<div class="info">
+									<h3>{{masters.name}}</h3>
+									<div class="icons">
+										<ul>
+											<li><a href="{{masters.facebook_link}}"><i class="fa fa-facebook"></i></a></li>
+											<li class="team-twitter"><a href="{{masters.instagram_link}}"><i class="fa fa-instagram"></i></a></li>
+											<li><a href="{{masters.youtube_link}}"><i class="fa fa-youtube-play"></i></a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<!-- end normal -->
+				  </div>
+				  <div class="clearfix"> </div>
+					<!-- end Bottom to top-->
+				  {% endfor %}
+				</div>
+		  </div>	
+		</div>
+			<!--//instructors  -->
+				<!-- gallery -->
+	<div class="gallery" id="gallery">
+			<h3 class="title-w3">Photo Gallery</h3>
+		 <p class="sub-text">Choose Your Style</p>
+			<div class="gallery-grids carouselGallery-grid hidden-xs">
+				{% for images in gallery %}
+				<div class="col-md-4 gallery-grid">
+					<div class="carouselGallery-col-1 carouselGallery-carousel" data-likes="{{images.likes}}" data-index="{{forloop.counter | add:-1}}" data-username=" " data-imagetext="{{images.description}}"
+						data-location="{{images.location}}" data-imagepath="{{images.image.url}}" data-posturl="{{images.link}}"
+						style="background-image:url({{images.background_image.url}});">
+						<div class="carouselGallery-item">
+							<div class="carouselGallery-item-meta">
+								<span class="carouselGallery-item-meta-user">
+								Gallery No {{forloop.counter}}
+								</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				{% endfor %}
+				<div class="clearfix"> </div>
+			</div>
+	</div>
+	<!-- //gallery -->
+	 <!-- //classes-->
+   <div class="testmonials" id="monials">
+		<div id="particles-js1"></div>
+		   <div class="client-top">
+		  <h3 class="title-w3 three">What Our Happy Students Say</h3>
+		       <p class="sub-text">And Parents Too</p>
+		    <div class="slider">
+					<div class="callbacks_container">
+						<ul class="rslides" id="slider3">
+							{% for reviews in reviews %}
+							<li>
+								 <div class="agileits-clients">
+									
+									<div class=" client_agile_info">
+									   
+											<div class="c-img"><i class="fa fa-quote-right"></i> </div>
+											<p>{{reviews.review}}</p>
+											<a href="{{reviews.link}}">source </a>
+											<h4><img src="{{reviews.image.url}}" alt="">{{reviews.name}}</h4>
+										 
+									</div>
+									
+								</div>
+							</li>
+							{% endfor %}
+
+						</ul>
+					</div>
+				</div>
+
+				</div>
+	</div>	
+	<!--//prices -->
+
+	<!-- Contact -->
+	<div class="agile-contact">
+
+		<div class="col-md-6 contact-map-right">
+			<div id="map"></div>
+		</div>
+		<div class="col-md-6 left-contact">
+		<div class="cont-top">
+			<h5><i class="fa fa-envelope" aria-hidden="true"></i>Email</h5>
+			<a href="{{details.email}}">info@example.com</a>
+		</div>
+		<div class="con-bot">
+			<div class="left-bw3 col-md-6" >
+				<h5><i class="fa fa-map-marker" aria-hidden="true"></i>Address</h5>
+				<p>{{details.add_line_1}}</p>
+				<p>{{details.add_line_2}}</p>
+				<p>{{details.add_line_3}}</p>
+			</div>
+			<div class="right-bw3 col-md-6">
+				<h5><i class="fa fa-phone" aria-hidden="true"></i>Phone</h5>
+				<p>Telephone : {{details.phone_line_1}}</p>
+				<p>{{details.phone_line_2}}</p>
+				<p>{{details.phone_line_3}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
+
+	<div class="contact" id="contact">
+	<div id="particles-js2"></div>
+		<div class="contact-top">
+		
+
+			<h3 class="title-w3 con">Contact Us</h3>
+			<p class="sub-text">For any kind of queries</p>
+
+			<form  method="post" class="contact_form slideanim">
+			{% csrf_token %}
+				<div class="message">
+					<div class="col-md-6 col-sm-6 grid_6 c1">
+						<input type="text" class="margin-right" name="name" placeholder="Name" required>
+						<input type="email" name="email" placeholder="Email" required>
+						<input type="text" class="margin-right" name="phone" pattern="[5-9]{4}[0-9]{3}[0-9]{3}" placeholder="Phone Number" required>
+					</div>
+
+					<div class="col-md-6 col-sm-6 grid_6 c1">
+						<textarea name="message" placeholder="Message" required></textarea>
+					</div>
+					<div class="clearfix"></div>
+				</div>
+
+				<input type="submit"  name="contact_submit" value="SEND MESSAGE">
+			</form>
+				<section class="social">
+                        <ul>
+							<li><a class="icon fb" href="{{details.facebook_link}}"><i class="fa fa-facebook"></i></a></li>
+							<li><a class="icon tw" href="{{details.instagram_link}}"><i class="fa fa-instagram"></i></a></li>
+							<li><a class="icon tw" href="{{details.youtube_link}}"><i class="fa fa-youtube-play"></i></a></li>
+
+						</ul>
+					</section>
+		</div>
+	</div>
+	<!-- //Contact -->
+
+
+
+<!-- footer -->
+			<div class="copy-right">
+				<p>&copy; Developed by dipankar</a></p>
+			</div>
+			
+<!-- //footer -->
+<a href="#" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
+
+			<script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+			<script src="{% static 'js/particles.js' %}"></script>
+			<script src="{% static 'js/app.js' %}"></script>
+
+<!-- skills -->
+
+			<script src="{% static 'js/responsiveslides.min.js' %}"></script>
+			<script>
+						// You can also use "$(window).load(function() {"
+						$(function () {
+						  // Slideshow 4
+						  $("#slider4").responsiveSlides({
+							auto: true,
+							pager:true,
+							nav:false,
+							speed: 500,
+							namespace: "callbacks",
+							before: function () {
+							  $('.events').append("<li>before event fired.</li>");
+							},
+							after: function () {
+							  $('.events').append("<li>after event fired.</li>");
+							}
+						  });
+					
+						});
+			</script>
+			<script>
+								// You can also use "$(window).load(function() {"
+								$(function () {
+								  // Slideshow 4
+								  $("#slider3").responsiveSlides({
+									auto: true,
+									pager:false,
+									nav:true,
+									speed: 500,
+									namespace: "callbacks",
+									before: function () {
+									  $('.events').append("<li>before event fired.</li>");
+									},
+									after: function () {
+									  $('.events').append("<li>after event fired.</li>");
+									}
+								  });
+							
+								});
+							 </script>
+
+ <!-- js -->
+	<script src="{% static 'js/main.js' %}"></script>
+<!-- search-jQuery -->
+<!-- pop-up-box -->
+			<script src="{% static 'js/jquery.magnific-popup.js' %}" type="text/javascript"></script>
+			<!--//pop-up-box -->
+			<script>
+				$(document).ready(function() {
+					$('.popup-with-zoom-anim').magnificPopup({
+						type: 'inline',
+						fixedContentPos: false,
+						fixedBgPos: true,
+						overflowY: 'auto',
+						closeBtnInside: true,
+						preloader: false,
+						midClick: true,
+						removalDelay: 300,
+						mainClass: 'my-mfp-zoom-in'
+					});														
+				});
+			</script>
+
+		<!-- Map-JavaScript -->
+			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js"></script>        
+			<script type="text/javascript">
+				google.maps.event.addDomListener(window, 'load', init);
+				function init() {
+					var mapOptions = {
+						zoom: 11,
+						center: new google.maps.LatLng(40.6700, -73.9400),
+						styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
+					};
+					var mapElement = document.getElementById('map');
+					var map = new google.maps.Map(mapElement, mapOptions);
+					var marker = new google.maps.Marker({
+						position: new google.maps.LatLng(40.6700, -73.9400),
+						map: map,
+					});
+				}
+			</script>
+	<!-- //Map-JavaScript -->
+
+	
+<!-- start-smoth-scrolling -->
+<script type="text/javascript" src="{% static 'js/move-top.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/easing.js' %}"></script>
+<script type="text/javascript">
+	jQuery(document).ready(function($) {
+		$(".scroll").click(function(event){		
+
+			event.preventDefault();
+			$('html,body').animate({scrollTop:$(this.hash).offset().top},1000);
+		});
+	});
+</script>
+<!-- start-smoth-scrolling -->
+
+
+<!-- here stars scrolling icon -->
+	<script type="text/javascript">
+		$(document).ready(function() {
+			/*
+				var defaults = {
+				containerID: 'toTop', // fading element id
+				containerHoverID: 'toTopHover', // fading element hover id
+				scrollSpeed: 1200,
+				easingType: 'linear' 
+				};
+			*/
+								
+			$().UItoTop({ easingType: 'easeOutQuart' });
+								
+			});
+	</script>
+<!-- //here ends scrolling icon -->
+	<script src="{% static 'js/bootstrap.js' %}"></script>
+<!-- //for bootstrap working -->
+</body>
+</html>
