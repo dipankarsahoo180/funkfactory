@@ -7,66 +7,32 @@ from django.contrib.auth.models import auth
 
 class HomePictures(models.Model):
     title = models.CharField(max_length=10, null=False)
-    body = models.CharField(max_length=30, null=True)
-    images = models.ImageField(upload_to='carousel', null=True)
+    body = models.CharField(max_length=30, blank=True)
+    images = models.ImageField(upload_to='carousel', blank=True)
     date = models.DateTimeField(auto_now_add=datetime.datetime.now())
 
     class Meta:
-        verbose_name = "Website Carousel Image"
-        verbose_name_plural = "Website Top Images"
+        verbose_name_plural = "1 Website Carousel Image"
+        verbose_name = "Website Top Image"
 
     def __str__(self):
         return self.title
 
 
-class Cards(models.Model):
-    card_title = models.CharField(max_length=20, null=False)
-    card_text = models.CharField(max_length=100, null=False)
-    images = models.ImageField(upload_to='cards', null=True)
-    card_body = models.CharField(max_length=5000, null=False)
-
-    def __str__(self):
-        return self.card_title
-
-    class Meta:
-        verbose_name = "Website Card Image"
-
-
-class ContactForm(models.Model):
-    name = models.CharField(max_length=100, null=False)
-    email = models.EmailField(max_length=100, null=False)
-    phone = models.CharField(max_length=10, null=False)
-    message = models.TextField(max_length=1000, null=False)
-    date = models.DateTimeField(default=datetime.datetime.now())
-
-    def __str__(self):
-        return self.name
-
-
 class AboutUs(models.Model):
-    heading = models.CharField(max_length=100, null=False)
-    sub_heading = models.CharField(max_length=100, null=False)
-    body = models.CharField(max_length=1000, null=False)
-    more_body = models.CharField(max_length=1000, null=False)
-    image = models.ImageField(upload_to='about_us', null=False)
-    more_popup_image = models.ImageField(upload_to='about_us', null=False)
+    heading = models.CharField(max_length=100, blank=True)
+    sub_heading = models.CharField(max_length=100, blank=True)
+    body = models.CharField(max_length=1000, blank=True)
+    more_body = models.CharField(max_length=1000, blank=True)
+    image = models.ImageField(upload_to='about_us', blank=True)
+    more_popup_image = models.ImageField(upload_to='about_us', blank=True)
 
     def __str__(self):
         return self.heading
 
     class Meta:
+        verbose_name_plural = "2 About Us"
         verbose_name = "About Us"
-        verbose_name_plural = "About Us"
-
-
-class ClassAbout(models.Model):
-    heading = models.CharField(max_length=30, null=False)
-    body = models.CharField(max_length=1000, null=False)
-    heading2 = models.CharField(max_length=30, null=False)
-    body2 = models.CharField(max_length=1000, null=False)
-
-    def __str__(self):
-        return self.heading
 
 
 class Notice(models.Model):
@@ -76,19 +42,41 @@ class Notice(models.Model):
     def __str__(self):
         return self.notice
 
+    class Meta:
+        verbose_name_plural = "3 Notice"
+        verbose_name = "Notice"
+
+
+class ClassAbout(models.Model):
+    heading = models.CharField(max_length=30, blank=True)
+    body = models.CharField(max_length=1000, blank=True)
+    heading2 = models.CharField(max_length=30, blank=True)
+    body2 = models.CharField(max_length=1000, blank=True)
+
+    def __str__(self):
+        return self.heading
+
+    class Meta:
+        verbose_name_plural = "4 personalise about class"
+        verbose_name = "personalise about class"
+
 
 class DanceStyleWeTeach(models.Model):
-    class_name = models.CharField(max_length=20, null=False)
-    dance_style = models.CharField(max_length=20, null=False)
-    picture = models.ImageField(upload_to='dance_styles', null=False)
+    class_name = models.CharField(max_length=20, blank=True)
+    dance_style = models.CharField(max_length=20, blank=True)
+    picture = models.ImageField(upload_to='dance_styles', blank=True)
 
     def __str__(self):
         return self.class_name
 
+    class Meta:
+        verbose_name_plural = "5 Dance class photo details"
+        verbose_name = "Heading And Body"
+
 
 class FacultiesProfile(models.Model):
     image = models.ImageField(upload_to='dance_masters', blank=True)
-    name = models.CharField(max_length=20, null=False)
+    name = models.CharField(max_length=20, blank=True)
     facebook_link = models.URLField(blank=True)
     instagram_link = models.URLField(blank=True)
     youtube_link = models.URLField(blank=True)
@@ -96,17 +84,25 @@ class FacultiesProfile(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = "6 Instructor details"
+        verbose_name = "Details"
+
 
 class FunkFactoryGallery(models.Model):
     likes = models.CharField(max_length=20, blank=True)
-    description = models.CharField(max_length=2000, null=False)
-    location = models.CharField(max_length=50, null=False)
+    description = models.CharField(max_length=2000, blank=True)
+    location = models.CharField(max_length=50, blank=True)
     image = models.ImageField(upload_to='gallery', blank=True)
     background_image = models.ImageField(upload_to='gallery', blank=True)
     link = models.URLField(blank=True)
 
     def __str__(self):
         return self.location
+
+    class Meta:
+        verbose_name_plural = "7 Gallery"
+        verbose_name = "Details"
 
 
 class Reviews(models.Model):
@@ -117,6 +113,10 @@ class Reviews(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = "8 Reviews"
+        verbose_name = "Reviews"
 
 
 class OurDetail(models.Model):
@@ -134,14 +134,37 @@ class OurDetail(models.Model):
     def __str__(self):
         return self.email
 
+    class Meta:
+        verbose_name_plural = "8 our details *soon to be available"
+        verbose_name = "Details"
+
 
 class Passwords(models.Model):
     # userid = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=300, blank=True)
     last_name = models.CharField(max_length=300, blank=True)
-    password = models.CharField(max_length=300, blank=True)
+    password = models.CharField(max_length=300, null = False)
     email = models.CharField(max_length=300, null=False)
     username = models.CharField(max_length=300, null=False)
 
     def __str__(self):
         return self.username
+
+    class Meta:
+        verbose_name_plural = "9 Experimental"
+        verbose_name = "Details"
+
+
+class ContactForm(models.Model):
+    name = models.CharField(max_length=100, null=False)
+    email = models.EmailField(max_length=100, null=False)
+    phone = models.CharField(max_length=10, null=False)
+    message = models.TextField(max_length=1000, null=False)
+    date = models.DateTimeField(default=datetime.datetime.now())
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "910 Contact forms"
+        verbose_name = "Details"

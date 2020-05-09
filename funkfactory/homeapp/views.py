@@ -1,5 +1,5 @@
 from django.shortcuts import render, redirect
-from .models import (HomePictures, Cards, ContactForm, AboutUs,
+from .models import (HomePictures, ContactForm, AboutUs,
                      ClassAbout, Notice, DanceStyleWeTeach,
                      FacultiesProfile, FunkFactoryGallery, Reviews,
                      OurDetail, Passwords)
@@ -13,7 +13,6 @@ from django.contrib.auth.models import User, auth
 
 def home(request):
     queryset_pictures = HomePictures.objects.all()
-    queryset_Cards = Cards.objects.all()
     queryset_AboutUs = AboutUs.objects.all().first()
     queryset_AboutClass = ClassAbout.objects.all().first()
     queryset_NoticeClass = Notice.objects.all()
@@ -64,8 +63,8 @@ def home(request):
 
                 return redirect('/')
 
-    context = {'pictures': queryset_pictures, 'cards': queryset_Cards,
-               'about': queryset_AboutUs, 'classSummary': queryset_AboutClass,
+    context = {'pictures': queryset_pictures, 'about': queryset_AboutUs,
+               'classSummary': queryset_AboutClass,
                'notifications': queryset_NoticeClass, 'dance_styles': queryset_Dance_styles,
                'instructors': queryset_Faculties, 'gallery': queryset_gallery,
                'reviews': queryset_reviews, 'details': queryset_client_details}

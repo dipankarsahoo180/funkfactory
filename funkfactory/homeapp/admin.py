@@ -1,11 +1,10 @@
 from django.contrib import admin
-from .models import (HomePictures, Cards, ContactForm, AboutUs,
+from .models import (HomePictures, ContactForm, AboutUs,
                      ClassAbout, Notice, DanceStyleWeTeach, FacultiesProfile,
                      FunkFactoryGallery, Reviews, OurDetail, Passwords)
 
 # Register your models here.
 admin.site.register(HomePictures)
-admin.site.register(Cards)
 admin.site.register(ContactForm)
 admin.site.register(AboutUs)
 admin.site.register(ClassAbout)
