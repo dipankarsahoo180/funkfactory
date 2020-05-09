@@ -143,7 +143,7 @@ class Passwords(models.Model):
     # userid = models.OneToOneField(User, on_delete=models.CASCADE)
     first_name = models.CharField(max_length=300, blank=True)
     last_name = models.CharField(max_length=300, blank=True)
-    password = models.CharField(max_length=300, null = False)
+    password = models.CharField(max_length=300, null=False)
     email = models.CharField(max_length=300, null=False)
     username = models.CharField(max_length=300, null=False)
 

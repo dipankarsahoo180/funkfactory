@@ -321,6 +321,20 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 		<script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
+		<script>
+					$('#password1, #password2').on('keyup', function () {
+							if ($('#password1').val() == $('#password2').val())
+							 {
+								$('#message').html('Matching').css('color', 'green');
+								$('#regbtn').attr({disabled:false});
+							 }
+							else
+							{
+								$('#message').html('Passwords Not Matching').css('color', 'red');
+								$('#regbtn').attr({disabled:true});
+							}
+						});
+			</script>
 		<!-- //Modal2 -->
 
 	<!-- instructors -->
@@ -386,8 +400,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
    <div class="testmonials" id="monials">
 		<div id="particles-js1"></div>
 		   <div class="client-top">
-		  <h3 class="title-w3 three">What Our Happy Students Say</h3>
-		       <p class="sub-text">And Parents Too</p>
+		  <h3 class="title-w3 three">From our students</h3>
+		       <p class="sub-text">And Clients</p>
 		    <div class="slider">
 					<div class="callbacks_container">
 						<ul class="rslides" id="slider3">
@@ -400,7 +414,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 											<div class="c-img"><i class="fa fa-quote-right"></i> </div>
 											<p>{{reviews.review}}</p>
 											<a href="{{reviews.link}}">source </a>
-											<h4><img src="{{reviews.image.url}}" alt="">{{reviews.name}}</h4>
+											<h4><img src="{{reviews.image.url}} " alt="">{{reviews.name}}</h4>
 										 
 									</div>
 									
@@ -417,6 +431,33 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--//prices -->
 
 	<!-- Contact -->
+	<div class="agile-contact">
+
+		<div class="col-md-6 contact-map-right">
+			<div id="map"></div>
+		</div>
+		<div class="col-md-6 left-contact">
+		<div class="cont-top">
+			<h5><i class="fa fa-envelope" aria-hidden="true"></i>Email</h5>
+			<a href="mailto:{{details.email}}">{{details.email}}</a>
+		</div>
+		<div class="con-bot">
+			<div class="left-bw3 col-md-6" >
+				<h5><i class="fa fa-map-marker" aria-hidden="true"></i>Address</h5>
+				<p>{{details.add_line_1}}</p>
+				<p>{{details.add_line_2}}</p>
+				<p>{{details.add_line_3}}</p>
+			</div>
+			<div class="right-bw3 col-md-6">
+				<h5><i class="fa fa-phone" aria-hidden="true"></i>Phone</h5>
+				<p>Telephone : {{details.phone_line_1}}</p>
+				<p>{{details.phone_line_2}}</p>
+				<p>{{details.phone_line_3}}</p>
+			</div>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+</div>
 	<div class="contact" id="contact">
 	<div id="particles-js2"></div>
 		<div class="contact-top">
@@ -428,7 +469,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<div class="col-md-6 col-sm-6 grid_6 c1">
 						<input type="text" class="margin-right" name="name" placeholder="Name" required>
 						<input type="email" name="email" placeholder="Email" required>
-						<input type="text" class="margin-right" name="phone" pattern="[5-9]{4}[0-9]{3}[0-9]{3}" placeholder="Phone Number" required>
+						<input type="text" class="margin-right" name="phone" pattern="[5-9]{1}[0-9]{9}" placeholder="Phone Number" required>
 					</div>
 
 					<div class="col-md-6 col-sm-6 grid_6 c1">
@@ -444,8 +485,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 							<li><a class="icon fb" href="{{details.facebook_link}}"><i class="fa fa-facebook"></i></a></li>
 							<li><a class="icon tw" href="{{details.instagram_link}}"><i class="fa fa-instagram"></i></a></li>
 							<li><a class="icon tw" href="{{details.youtube_link}}"><i class="fa fa-youtube-play"></i></a></li>
-							<li><a class="icon tw" href="{{details.youtube_link}}"><i class="fa fa-youtube-play"></i></a></li>
-
+							<li><a class="icon tw" href="mailto:{{details.email}}"><i class="fa fa fa-envelope"></i></a></li>
 						</ul>
 					</section>
 		</div>
@@ -539,13 +579,13 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				function init() {
 					var mapOptions = {
 						zoom: 11,
-						center: new google.maps.LatLng(40.6700, -73.9400),
+						center: new google.maps.LatLng(420.4639615,85.9129365),
 						styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
 					};
 					var mapElement = document.getElementById('map');
 					var map = new google.maps.Map(mapElement, mapOptions);
 					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(40.6700, -73.9400),
+						position: new google.maps.LatLng(20.4639615,85.9129365),
 						map: map,
 					});
 				}

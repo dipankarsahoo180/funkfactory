@@ -43,15 +43,15 @@ def home(request):
                 password = request.POST.get('password1')
                 password2 = request.POST.get('password2')
                 email = request.POST.get('email')
-                # form = User.objects.create_user(username=username, first_name=first_name,
-                #                                 last_name=last_name, email=email, password=password)
-                # form.save()
+                form = User.objects.create_user(username=username, first_name=first_name,
+                                                last_name=last_name, email=email, password=password)
+                form.save()
                 text = "Hi " + str(first_name) + "! Your account has been created successfully."
                 messages.success(request, text)
-                password = Passwords(first_name=first_name, last_name=last_name,
-                                     username=username, email=email, password=password)
-                password.save()
-                print(password)
+                # password = Passwords(first_name=first_name, last_name=last_name,
+                #                      username=username, email=email, password=password)
+                # password.save()
+                # print(password)
                 return redirect('/')
             except:
                 if User.objects.filter(username=username).exists():
