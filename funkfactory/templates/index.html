@@ -42,8 +42,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 						<div class="w3layouts-banner-top" style = "background: url({{pictures.images.url}}) no-repeat 0px 0px;background-size:100% 100%;">
 							<div class="container">
 								<div class="agileits-banner-info">
-									<h3>{{picures.title}}</h3>
-										<p>{{pictures.body}}</p>
+									<h3>{{ pictures.title }} </h3>
+										<p>{{ pictures.body }}</p>
 									<div class="agileits_w3layouts_more menu__item">
 											<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal">Learn More</a>
 									</div>
@@ -64,19 +64,17 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				</a>
 			</div>
  			<!-- header -->
-		<div class="header-w3layouts"> 
+
 			<!-- Navigation -->
 			<nav class="navbar navbar-default navbar-fixed-top">
-				<div class="container">
+				<div class="container-fluid">
 					<div class="navbar-header page-scroll">
 						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
-							<span class="sr-only">Button</span>
-							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 						</button>
-						<h1><a class="navbar-brand" href="/">Funk Factory</a></h1>
-					</div> 
+						<h1><a class="navbar-brand" href="/" >Funk Factory</a></h1>
+					</div>
 					<!-- Collect the nav links, forms, and other content for toggling -->
 					<div class="collapse navbar-collapse navbar-ex1-collapse">
 						<ul class="nav navbar-nav navbar-right">
@@ -95,8 +93,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					<!-- /.navbar-collapse -->
 				</div>
 				<!-- /.container -->
-			</nav>  
-		</div>	
+			</nav>
 		<!-- //header -->
 	</div>	
 	<!-- //banner --> 
@@ -113,28 +110,28 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <!-- about -->
 <table class="about" id="about">
 	<tr>
-		<td class="ab-w3-agile-info-text">
+<!--		<td class="ab-w3-agile-info-text">-->
 			<h2 class="title-w3">{{about.heading}}</h2>
 			<p class="sub-text one">{{about.sub_heading}}</p>
 			<p>{{about.body}}</p>
 				<div class="agileits_w3layouts_more menu__item one">
 					<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal">Learn More</a>
 				</div>
-		</td>
-		<td > <img src="{{about.image.url}}"/ width="100%" height="100%"> </td>
-	</tr>
-	<tr class="ab-w3-agile-inner">
-			<td class="col-md-6 ab-w3-agile-part">
-					<h4>{{classSummary.heading}}</h4>
-				<p>{{classSummary.body}}</p>
-			</td>
-				<td class="col-md-6 ab-w3-agile-part">
-				<h4>{{classSummary.heading2}}</h4>
-				<p>{{classSummary.body2}}</p>
-			</td>
+<!--		</td>-->
+<!--		<td > <img src="{{about.image.url}}"/ width="100%" height="100%"> </td>-->
 	</tr>
 </table>
-	<!-- //about -->
+<table>
+		<tr >
+				<h2 style="background-color:skyblue">{{classSummary.heading}}</h2>
+			<p style="background-color:skyblue">{{classSummary.body}}</p>
+		</tr>
+			<tr>
+			<h2 style="background-color:orange">{{classSummary.heading2}}</h2>
+			<p style="background-color:orange">{{classSummary.body2}}</p>
+		</tr>
+</table>
+<!-- //about -->
 											<!-- Modal1 -->
 													<div class="modal fade" id="myModal" tabindex="-1" role="dialog">
 														<div class="modal-dialog">
@@ -162,7 +159,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				 {% for styles in dance_styles %}
 	               	<div class="col-md-3 class-grid">
 						<div class="class-grid-img hvr-sweep-to-top">
-					       <img src="{{styles.picture.url}}" height="400px" alt="pictures to be updated"/>
+					       <img src="{{styles.picture.url}}" height="280px" width="180px" alt="pictures to be updated"/>
 						    <div class="caption">
 							    <h5>{{styles.class_name}}</h5>
 							</div>
@@ -177,8 +174,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
    <!-- //classes-->
    <div class="main" id="plans">
 		<div id="particles-js"></div>
-
-		  
 		<div class="priceing-table-main">
 		       <h3 class="title-w3 three">Our Pricing Pakages</h3>
 		       <p class="sub-text">Choose Your Style</p>
@@ -293,7 +288,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		</div>	
 	</div>	
 	<!--//prices -->
-				<!-- Modal2-->
+
+	<!-- Modal2-->
 		<div class="pop-up" id="signupp">
 			<div id="small-dialog" class="mfp-hide book-form">
 				<h4>Sign Up Here </h4>
@@ -325,21 +321,8 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			</div>
 		</div>
 		<script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
-		<script>
-					$('#password1, #password2').on('keyup', function () {
-							if ($('#password1').val() == $('#password2').val())
-							 {
-								$('#message').html('Matching').css('color', 'green');
-								$('#regbtn').attr({disabled:false});
-							 }
-							else
-							{
-								$('#message').html('Passwords Not Matching').css('color', 'red');
-								$('#regbtn').attr({disabled:true});
-							}
-						});
-			</script>
-						<!-- //Modal2 -->
+		<!-- //Modal2 -->
+
 	<!-- instructors -->
 		<div class="instructors" id="instructors">
 		   <div class="container">
@@ -431,42 +414,11 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 	<!--//prices -->
 
 	<!-- Contact -->
-	<div class="agile-contact">
-
-		<div class="col-md-6 contact-map-right">
-			<div id="map"></div>
-		</div>
-		<div class="col-md-6 left-contact">
-		<div class="cont-top">
-			<h5><i class="fa fa-envelope" aria-hidden="true"></i>Email</h5>
-			<a href="{{details.email}}">info@example.com</a>
-		</div>
-		<div class="con-bot">
-			<div class="left-bw3 col-md-6" >
-				<h5><i class="fa fa-map-marker" aria-hidden="true"></i>Address</h5>
-				<p>{{details.add_line_1}}</p>
-				<p>{{details.add_line_2}}</p>
-				<p>{{details.add_line_3}}</p>
-			</div>
-			<div class="right-bw3 col-md-6">
-				<h5><i class="fa fa-phone" aria-hidden="true"></i>Phone</h5>
-				<p>Telephone : {{details.phone_line_1}}</p>
-				<p>{{details.phone_line_2}}</p>
-				<p>{{details.phone_line_3}}</p>
-			</div>
-		</div>
-	</div>
-	<div class="clearfix"></div>
-</div>
-
 	<div class="contact" id="contact">
 	<div id="particles-js2"></div>
 		<div class="contact-top">
-		
-
 			<h3 class="title-w3 con">Contact Us</h3>
 			<p class="sub-text">For any kind of queries</p>
-
 			<form  method="post" class="contact_form slideanim">
 			{% csrf_token %}
 				<div class="message">
@@ -488,6 +440,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
                         <ul>
 							<li><a class="icon fb" href="{{details.facebook_link}}"><i class="fa fa-facebook"></i></a></li>
 							<li><a class="icon tw" href="{{details.instagram_link}}"><i class="fa fa-instagram"></i></a></li>
+							<li><a class="icon tw" href="{{details.youtube_link}}"><i class="fa fa-youtube-play"></i></a></li>
 							<li><a class="icon tw" href="{{details.youtube_link}}"><i class="fa fa-youtube-play"></i></a></li>
 
 						</ul>
