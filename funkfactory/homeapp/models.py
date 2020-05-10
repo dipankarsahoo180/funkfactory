@@ -73,6 +73,19 @@ class DanceStyleWeTeach(models.Model):
         verbose_name_plural = "5 Dance class photo details"
         verbose_name = "Heading And Body"
 
+class Packages(models.Model):
+    class_name = models.CharField(max_length=10, blank=True)
+    timing = models.CharField(max_length=10, blank=True)
+    price = models.CharField(max_length=10, blank=True)
+    rating = models.CharField(max_length=1, blank=True)
+
+    def __str__(self):
+        return self.class_name
+
+    class Meta:
+        verbose_name_plural = "6 Class Packages"
+        verbose_name = "Details"
+
 
 class FacultiesProfile(models.Model):
     image = models.ImageField(upload_to='dance_masters', blank=True)
@@ -85,7 +98,7 @@ class FacultiesProfile(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = "6 Instructor details"
+        verbose_name_plural = "7 Instructor details"
         verbose_name = "Details"
 
 
@@ -101,7 +114,7 @@ class FunkFactoryGallery(models.Model):
         return self.location
 
     class Meta:
-        verbose_name_plural = "7 Gallery"
+        verbose_name_plural = "8 Gallery"
         verbose_name = "Details"
 
 
@@ -115,7 +128,7 @@ class Reviews(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = "8 Reviews"
+        verbose_name_plural = "9 Reviews"
         verbose_name = "Reviews"
 
 
@@ -135,23 +148,7 @@ class OurDetail(models.Model):
         return self.email
 
     class Meta:
-        verbose_name_plural = "8 our details *soon to be available"
-        verbose_name = "Details"
-
-
-class Passwords(models.Model):
-    # userid = models.OneToOneField(User, on_delete=models.CASCADE)
-    first_name = models.CharField(max_length=300, blank=True)
-    last_name = models.CharField(max_length=300, blank=True)
-    password = models.CharField(max_length=300, null=False)
-    email = models.CharField(max_length=300, null=False)
-    username = models.CharField(max_length=300, null=False)
-
-    def __str__(self):
-        return self.username
-
-    class Meta:
-        verbose_name_plural = "9 Experimental"
+        verbose_name_plural = "910 our details"
         verbose_name = "Details"
 
 
@@ -166,15 +163,5 @@ class ContactForm(models.Model):
         return self.name
 
     class Meta:
-        verbose_name_plural = "910 Contact forms"
+        verbose_name_plural = "911 Contact forms"
         verbose_name = "Details"
-
-
-class Packages(models.Model):
-    class_name = models.CharField(max_length=10, blank=True)
-    timing = models.CharField(max_length=10, blank=True)
-    price = models.CharField(max_length=10, blank=True)
-    rating = models.CharField(max_length=1, blank=True)
-
-    def __str__(self):
-        return self.class_name

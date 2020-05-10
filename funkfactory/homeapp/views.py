@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import (HomePictures, ContactForm, AboutUs,
                      ClassAbout, Notice, DanceStyleWeTeach,
                      FacultiesProfile, FunkFactoryGallery, Reviews,
-                     OurDetail, Passwords, Packages)
+                     OurDetail, Packages)
 from django.db.models import manager
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
@@ -21,7 +21,6 @@ def home(request):
     queryset_gallery = FunkFactoryGallery.objects.all()
     queryset_reviews = Reviews.objects.all()
     queryset_client_details = OurDetail.objects.all().first()
-    queryset_passwords = Passwords.objects.all()
     queryset_packages = Packages.objects.all()
     if request.method == "POST":
         print(request.POST)
