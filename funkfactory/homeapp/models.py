@@ -19,6 +19,13 @@ class HomePictures(models.Model):
         return self.title
 
 
+class Cards(models.Model):
+    images = models.ImageField(upload_to='carousel', blank=True)
+
+    def __str__(self):
+        return self.images
+
+
 class AboutUs(models.Model):
     heading = models.CharField(max_length=100, blank=True)
     sub_heading = models.CharField(max_length=100, blank=True)
