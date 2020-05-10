@@ -6,7 +6,7 @@ from django.contrib.auth.models import auth
 
 
 class HomePictures(models.Model):
-    title = models.CharField(max_length=10, null=False)
+    title = models.CharField(max_length=10, blank=True)
     body = models.CharField(max_length=30, blank=True)
     images = models.ImageField(upload_to='carousel', blank=True)
     date = models.DateTimeField(auto_now_add=datetime.datetime.now())
@@ -72,6 +72,7 @@ class DanceStyleWeTeach(models.Model):
     class Meta:
         verbose_name_plural = "5 Dance class photo details"
         verbose_name = "Heading And Body"
+
 
 class Packages(models.Model):
     class_name = models.CharField(max_length=10, blank=True)
@@ -164,4 +165,18 @@ class ContactForm(models.Model):
 
     class Meta:
         verbose_name_plural = "911 Contact forms"
+        verbose_name = "Details"
+
+
+class BackgroundImage(models.Model):
+    name = models.CharField(max_length=15, blank=True)
+    image1 = models.ImageField(upload_to='background', blank=True)
+    image2 = models.ImageField(upload_to='background', blank=True)
+    image3 = models.ImageField(upload_to='background', blank=True)
+
+    def __str__(self):
+        return self.name
+
+    class Meta:
+        verbose_name_plural = "912 Background Image"
         verbose_name = "Details"

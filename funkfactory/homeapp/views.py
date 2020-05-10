@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from .models import (HomePictures, ContactForm, AboutUs,
                      ClassAbout, Notice, DanceStyleWeTeach,
                      FacultiesProfile, FunkFactoryGallery, Reviews,
-                     OurDetail, Packages)
+                     OurDetail, Packages,BackgroundImage)
 from django.db.models import manager
 from django.contrib import messages
 from django.contrib.auth.models import User, auth
@@ -22,6 +22,7 @@ def home(request):
     queryset_reviews = Reviews.objects.all()
     queryset_client_details = OurDetail.objects.all().first()
     queryset_packages = Packages.objects.all()
+    queryset_background_image = BackgroundImage.objects.all().first()
     if request.method == "POST":
         print(request.POST)
         if "contact_submit" in request.POST:
@@ -68,5 +69,5 @@ def home(request):
                'notifications': queryset_NoticeClass, 'dance_styles': queryset_Dance_styles,
                'instructors': queryset_Faculties, 'gallery': queryset_gallery,
                'reviews': queryset_reviews, 'details': queryset_client_details,
-               'packages':queryset_packages}
+               'packages':queryset_packages, 'background_image': queryset_background_image}
     return render(request, 'index.html', context)
