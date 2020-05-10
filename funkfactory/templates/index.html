@@ -184,7 +184,7 @@
 								  <h2 style="color:white">{{package.class_name}}</h2>
 							</div>
 							<div class="price-selet pric-sclr1">		    			   
-                    <a class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#contact">Sign Up</a>
+                    <a  class="page-scroll scroll" class="book popup-with-zoom-anim button-isi zoomIn animated" data-wow-delay=".5s" href="#contact">Contact Us</a>
 							</div>
 						</div>
 					</div>
@@ -196,53 +196,6 @@
 	</div>	
 	<!--//prices -->
 
-	<!-- Modal2-->
-		<div class="pop-up" id="signupp">
-			<div id="small-dialog" class="mfp-hide book-form">
-				<h4>Sign Up Here </h4>
-				<form action="/" method="post" id="sign_up_form">
-					{% csrf_token %}
-						<input type="text" name="first_name" placeholder="Your First Name" required/>
-						<input type="text" name="last_name" placeholder="Your Last Name" required/>
-						<input type="text" name="username" placeholder="Choose an username" required/>
-						<input type="text" name="email" class="email" placeholder="Email" required/>
-						<input type="password" name="Password1" class="password" placeholder="Password" id="password1" required/>
-						<input type="password" name="Password2" class="password" placeholder=" Confirm Password" id="password2"  required/>
-						<div><span id='message'></span></div>
-						<div class="check-box">
-							<input name="chekbox" type="checkbox" id="brand" >
-							<label for="brand"><span></span>Remember Me.</label>
-						</div>
-
-						{% if messages %}
-								{% for message in messages  %}
-										<div class="alert alert-success alert-dismissible" role="alert">
-											<button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-											<strong>{{message.tag}}</strong>
-											<h2><strong>{{message}}</strong><h2>
-										</div>
-								{% endfor %}
-						{% endif %}
-						<input type="submit" name="sign_up" id="regbtn" value="Sign Up" />
-				</form>
-			</div>
-		</div>
-		<script src="{% static 'js/jquery-2.2.3.min.js' %}"></script>
-		<script>
-					$('#password1, #password2').on('keyup', function () {
-							if ($('#password1').val() == $('#password2').val())
-							 {
-								$('#message').html('Matching').css('color', 'green');
-								$('#regbtn').attr({disabled:false});
-							 }
-							else
-							{
-								$('#message').html('Passwords Not Matching').css('color', 'red');
-								$('#regbtn').attr({disabled:true});
-							}
-						});
-			</script>
-		<!-- //Modal2 -->
 
 	<!-- instructors -->
 		<div class="instructors" id="instructors">
@@ -339,11 +292,6 @@
 
 	<!-- Contact -->
 	<div class="agile-contact">
-
-<!--		<div class="col-md-6 contact-map-right">-->
-<!--			<div id="map"></div>-->
-<!--		</div>-->
-<!--		<div class="col-md-6 left-contact">-->
 		<div class="cont-top">
 			<h5 ><i class="fa fa-envelope" aria-hidden="true"></i>Email</h5>
 			<a href="mailto:{{details.email}}" >{{details.email}}</a>
@@ -362,7 +310,6 @@
 				<p>{{details.phone_line_3}}</p>
 			</div>
 		</div>
-<!--	</div>-->
 	<div class="clearfix"></div>
 </div>
 	<div class="contact" id="contact" style = "background: url({{background_image.image1.url}})no-repeat 0px 0px;background-size:100% 100%;">
@@ -479,25 +426,7 @@
 				});
 			</script>
 
-		<!-- Map-JavaScript -->
-			<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvV8RDWumC2BiTrIey8t_opgEfLeEhD0E&callback=init"async defer></script>
-			<script type="text/javascript">
 
-				function init() {
-					var mapOptions = {
-						zoom: 11,
-						center: new google.maps.LatLng(420.4639615,85.9129365),
-						styles: [{"featureType":"all","elementType":"labels.text.fill","stylers":[{"saturation":36},{"color":"#000000"},{"lightness":40}]},{"featureType":"all","elementType":"labels.text.stroke","stylers":[{"visibility":"on"},{"color":"#000000"},{"lightness":16}]},{"featureType":"all","elementType":"labels.icon","stylers":[{"visibility":"off"}]},{"featureType":"administrative","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"administrative","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":17},{"weight":1.2}]},{"featureType":"landscape","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":20}]},{"featureType":"poi","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":21}]},{"featureType":"road.highway","elementType":"geometry.fill","stylers":[{"color":"#000000"},{"lightness":17}]},{"featureType":"road.highway","elementType":"geometry.stroke","stylers":[{"color":"#000000"},{"lightness":29},{"weight":0.2}]},{"featureType":"road.arterial","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":18}]},{"featureType":"road.local","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":16}]},{"featureType":"transit","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":19}]},{"featureType":"water","elementType":"geometry","stylers":[{"color":"#000000"},{"lightness":17}]}]
-					};
-					var mapElement = document.getElementById('map');
-					var map = new google.maps.Map(mapElement, mapOptions);
-					var marker = new google.maps.Marker({
-						position: new google.maps.LatLng(20.4639615,85.9129365),
-						map: map,
-					});
-				}
-			</script>
-	<!-- //Map-JavaScript -->
 
 	
 <!-- start-smoth-scrolling -->
