@@ -168,3 +168,13 @@ class ContactForm(models.Model):
     class Meta:
         verbose_name_plural = "910 Contact forms"
         verbose_name = "Details"
+
+
+class Packages(models.Model):
+    class_name = models.CharField(max_length=10, blank=True)
+    timing = models.CharField(max_length=10, blank=True)
+    price = models.CharField(max_length=10, blank=True)
+    rating = models.CharField(max_length=1, blank=True)
+
+    def __str__(self):
+        return self.class_name

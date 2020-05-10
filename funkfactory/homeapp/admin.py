@@ -1,7 +1,8 @@
 from django.contrib import admin
 from .models import (HomePictures, ContactForm, AboutUs,
                      ClassAbout, Notice, DanceStyleWeTeach, FacultiesProfile,
-                     FunkFactoryGallery, Reviews, OurDetail, Passwords)
+                     FunkFactoryGallery, Reviews, OurDetail, Passwords,
+                     Packages)
 
 # Register your models here.
 admin.site.register(HomePictures)
@@ -15,3 +16,4 @@ admin.site.register(FunkFactoryGallery)
 admin.site.register(Reviews)
 admin.site.register(OurDetail)
 admin.site.register(Passwords)
+admin.site.register(Packages)
