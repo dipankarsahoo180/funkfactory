@@ -24,7 +24,7 @@
 </head>
 <body id="page-top" data-spy="scroll" data-target=".navbar-fixed-top">
 	<!-- banner -->
-	<div id="home" class="w3ls-banner">
+	<div id="home" class="popping-banner">
 
 	<!-- banner-text -->
 	<div class="slider">
@@ -32,12 +32,12 @@
 		<ul class="rslides callbacks callbacks1" id="slider4">
 		{% for pictures in pictures %}
 			<li>
-				<div class="w3layouts-banner-top" style = "background: url({{pictures.images.url}}) no-repeat 0px 0px;background-size:100% 100%;">
+				<div class="funkfactory-banner-top" style = "background: url({{pictures.images.url}}) no-repeat 0px 0px;background-size:100% 100%;">
 					<div class="container">
 						<div class="agileits-banner-info">
 							<h3>{{ pictures.title }} </h3>
 								<p>{{ pictures.body }}</p>
-							<div class="agileits_w3layouts_more menu__item">
+							<div class="agileits_funkfactory_more menu__item">
 									<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal">Click here</a>
 							</div>
 						</div>
@@ -109,7 +109,7 @@
 			<h2 class="title-w3">{{about.heading}}</h2>
 			<p class="sub-text one">{{about.sub_heading}}</p>
 			<p>{{about.body}}</p>
-				<div class="agileits_w3layouts_more menu__item one">
+				<div class="agileits_funkfactory_more menu__item one">
 					<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal">Click here for Notifications</a>
 				</div>
 	</tr>
