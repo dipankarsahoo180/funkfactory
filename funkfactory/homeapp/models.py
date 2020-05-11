@@ -14,6 +14,7 @@ class HomePictures(models.Model):
     class Meta:
         verbose_name_plural = "1 Website Carousel Image"
         verbose_name = "Website Top Image"
+        ordering = ('-date',)
 
     def __str__(self):
         return self.title
@@ -45,6 +46,8 @@ class Notice(models.Model):
     class Meta:
         verbose_name_plural = "3 Notice"
         verbose_name = "Notice"
+        ordering = ('-date',)
+
 
 
 class ClassAbout(models.Model):
