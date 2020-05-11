@@ -169,6 +169,7 @@ class ContactForm(models.Model):
     class Meta:
         verbose_name_plural = "911 Contact forms"
         verbose_name = "Details"
+        ordering = ('-date',)
 
 
 class BackgroundImage(models.Model):
