@@ -1,9 +1,4 @@
-/*--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
---*/
+
 body{
 	margin:0;
 	font-family: 'Source Sans Pro', sans-serif;
@@ -39,7 +34,7 @@ body a:focus {
 	text-decoration:none;
 }
 /*-- banner --*/ 
-.w3ls-banner{
+.popping-banner{
 	position: relative;
 }   
 /*-- header --*/ 
@@ -105,10 +100,10 @@ nav.navbar.navbar-default.navbar-fixed-top.top-nav-collapse {
     margin: 2em auto;
     width: 57%;
 }
-.agileits_w3layouts_more{
+.agileits_funkfactory_more{
 	position:relative;
 }
-.agileits_w3layouts_more a{
+.agileits_funkfactory_more a{
 	    font-size: 17px;
     color: #fff;
     text-decoration: none;
@@ -116,13 +111,13 @@ nav.navbar.navbar-default.navbar-fixed-top.top-nav-collapse {
     letter-spacing: 4px;
     position: relative;
 }
-.agileits_w3layouts_more a:focus{
+.agileits_funkfactory_more a:focus{
 	outline:none;
 }
-.agileits_w3layouts_more a:hover{
+.agileits_funkfactory_more a:hover{
 	color:#fff;
 }
-.agileits_w3layouts_more a:before,.agileits_w3layouts_more a:after{
+.agileits_funkfactory_more a:before,.agileits_funkfactory_more a:after{
 	content: '';
     background: #fff;
     width: 85%;
@@ -131,7 +126,7 @@ nav.navbar.navbar-default.navbar-fixed-top.top-nav-collapse {
     left: 105%;
     top: 46%;
 }
-.agileits_w3layouts_more a:after{
+.agileits_funkfactory_more a:after{
 	-webkit-transition-delay: 0.4s;
     transition-delay: 0.4s;
 	    -webkit-transform: scale3d(0, 1, 1);
@@ -141,18 +136,18 @@ nav.navbar.navbar-default.navbar-fixed-top.top-nav-collapse {
     -webkit-transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
     transition: transform 0.4s cubic-bezier(0.22, 0.61, 0.36, 1);
 }
-.agileits_w3layouts_more a:hover::before, .agileits_w3layouts_more a:hover::after {
+.agileits_funkfactory_more a:hover::before, .agileits_funkfactory_more a:hover::after {
     -webkit-transform: scale3d(1, 1, 1);
     transform: scale3d(1, 1, 1);
     -webkit-transition-delay: 0s;
     transition-delay: 0s;
 }
-.agileits_w3layouts_more a::after {
+.agileits_funkfactory_more a::after {
     background:#168eea;
 }
 /*-- //banner-text --*/
 /*-- banner-top --*/
-.w3layouts-banner-top{
+.funkfactory-banner-top{
     background-size: cover;	
 	-webkit-background-size: cover;	
 	-moz-background-size: cover;
@@ -408,11 +403,11 @@ p.sub-text.one {
 .ab-w3-agile-part p {
     color: #fff;
 }
-.agileits_w3layouts_more.menu__item.one a {
+.agileits_funkfactory_more.menu__item.one a {
     color: #168eea;
     margin-top: 1em;
 }
-.agileits_w3layouts_more.menu__item.one a:before,.agileits_w3layouts_more.menu__item.one a:after {
+.agileits_funkfactory_more.menu__item.one a:before,.agileits_funkfactory_more.menu__item.one a:after {
     content: '';
     background: #ee4f4f;
     width: 85%;
@@ -918,7 +913,7 @@ h3.title-w3.three {
     -moz-transition: 0.5s all;
     -o-transition: 0.5s all;
 }
-.price-block:hover,.w3layouts-pricing:hover,.w3-agileits-vpn-grid:hover {
+.price-block:hover,.funkfactory-pricing:hover,.w3-agileits-vpn-grid:hover {
     transform: scale(1.1);
     -webkit-transform: scale(1.1);
     -moz-transform: scale(1.1);
@@ -1337,7 +1332,7 @@ section.social ul li {
 /*-- //slider-up-arrow --*/ 
 /*-- responsive-design --*/
 @media(max-width:1440px){
-	.w3layouts-banner-top,.w3layouts-banner-top1,.w3layouts-banner-top2{
+	.funkfactory-banner-top,.funkfactory-banner-top1,.funkfactory-banner-top2{
 		min-height:680px;
 	}
 	.agileits-banner-info {
@@ -1438,7 +1433,7 @@ section.social ul li {
 	    bottom: 14%;
 		left: 48.5%;
 	}
-	.w3layouts-banner-top, .w3layouts-banner-top1, .w3layouts-banner-top2 {
+	.funkfactory-banner-top, .funkfactory-banner-top1, .funkfactory-banner-top2 {
 		min-height:565px;
 	}
 	.thim-click-to-bottom i {
@@ -1604,7 +1599,7 @@ section.social ul li {
 		font-size: 2.5em;
 		letter-spacing: 9px;
 	}
-	.agileits_w3layouts_more a {
+	.agileits_funkfactory_more a {
 		font-size: 15px;
 		letter-spacing: 2px;
 		position: relative;
@@ -1618,7 +1613,7 @@ section.social ul li {
 	h1 a.navbar-brand {
 		font-size: 1.1em;
 	}
-	.w3layouts-banner-top, .w3layouts-banner-top1, .w3layouts-banner-top2 {
+	.funkfactory-banner-top, .funkfactory-banner-top1, .funkfactory-banner-top2 {
 		min-height: 465px;
 	}
 	.agileits-banner-info {
@@ -1851,7 +1846,7 @@ section.social ul li {
 	}
 } 
 @media(max-width:640px){
-	.w3layouts-banner-top, .w3layouts-banner-top1, .w3layouts-banner-top2 {
+	.funkfactory-banner-top, .funkfactory-banner-top1, .funkfactory-banner-top2 {
 		min-height: 395px;
 	}
 	.agileits-banner-info h3 {
@@ -1945,7 +1940,7 @@ section.social ul li {
 		margin: 1em auto;
 		width: 82%;
 	}
-	.w3layouts-banner-top, .w3layouts-banner-top1, .w3layouts-banner-top2 {
+	.funkfactory-banner-top, .funkfactory-banner-top1, .funkfactory-banner-top2 {
 		min-height: 340px;
 	}
 	.agileits-banner-info {
@@ -2107,7 +2102,7 @@ section.social ul li {
 		text-align: center;
 		padding: 8em 0 0em;
 	}
-	.w3layouts-banner-top, .w3layouts-banner-top1, .w3layouts-banner-top2 {
+	.funkfactory-banner-top, .funkfactory-banner-top1, .funkfactory-banner-top2 {
 		min-height: 300px;
 	}
 	.thim-click-to-bottom {
@@ -2137,7 +2132,7 @@ section.social ul li {
 		margin: 1em auto;
 		width: 86%;
 	}
-	.w3layouts-banner-top, .w3layouts-banner-top1, .w3layouts-banner-top2 {
+	.funkfactory-banner-top, .funkfactory-banner-top1, .funkfactory-banner-top2 {
 		min-height: 258px;
 	}
 	.agileits-banner-info {
@@ -2149,7 +2144,7 @@ section.social ul li {
 		bottom: 12%;
 		left: 48.5%;
 	}
-	.agileits_w3layouts_more a:before, .agileits_w3layouts_more a:after {
+	.agileits_funkfactory_more a:before, .agileits_funkfactory_more a:after {
 		content: '';
 		background: #fff;
 		width: 62%;
@@ -2158,7 +2153,7 @@ section.social ul li {
 		left: 105%;
 		top: 46%;
 	}
-	.agileits_w3layouts_more a {
+	.agileits_funkfactory_more a {
 		font-size: 13px;
 		letter-spacing: 1px;
 		position: relative;
