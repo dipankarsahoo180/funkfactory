@@ -557,9 +557,7 @@ p.sub-text.one {
   border-radius: 0 0 3px 3px;
 }
 
-
 /* ---- particles.js container ---- */
-
 #particles-js{
   width: 100%;
   background-image: url('');
@@ -1075,6 +1073,7 @@ form.contact_form {
     letter-spacing: 1px;
 }
 /*-- Map-and-Address --*/
+
 /*-- social-icons --*/
 .social_icons {
     text-align: center;
