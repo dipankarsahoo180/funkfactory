@@ -37,9 +37,6 @@
 								<div class="agileits-banner-info">
 									<h3>{{ pictures.title }} </h3>
 										<p>{{ pictures.body }}</p>
-									<div class="agileits_w3layouts_more menu__item">
-											<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal"><h3>Click Here</h3></a>
-									</div>
 								</div>	
 							</div>
 						</div>
@@ -100,16 +97,17 @@
 			</div>
 	{% endfor %}
 {% endif %}
-
+<div class="agileits_w3layouts_more menu__item one" >
+	<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal">
+		<h2 style="text-align:center;background-color:red;color:white;">
+		Click Here for Notifications</h2></a>
+</div>
 <!-- about -->
 <table class="about" id="about">
 	<tr>
 		<h2 class="title-w3">{{about.heading}}</h2>
 		<p class="sub-text one">{{about.sub_heading}}</p>
 		<p>{{about.body}}</p>
-			<div class="agileits_w3layouts_more menu__item one">
-				<a href="#" class="menu__link" data-toggle="modal" data-target="#myModal"><h3>Notifications</h3></a>
-			</div>
 	</tr>
 </table>
 <table>
